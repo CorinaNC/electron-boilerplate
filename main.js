@@ -17,7 +17,7 @@ const createWindow = () => {
         protocol: 'file',
     })
 
-    mainWindow.loadURL("http://localhost:5174") // change this to stratUrl when deploying
+    mainWindow.loadURL("http://localhost:5173") // change this to stratUrl when deploying
 }
 
 app.whenReady().then(createWindow)
