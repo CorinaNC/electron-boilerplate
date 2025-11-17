@@ -13,7 +13,8 @@ const Layout = () => {
           <a href="/">Home</a>
         </li>
       </ul>
-      <Outlet /> {/* <Outlet /> is needed to provide nested routes inside of x route */}
+      <Outlet />{" "}
+      {/* <Outlet /> is needed to provide nested routes inside of x route */}
     </div>
   );
 };

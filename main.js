@@ -1,23 +1,34 @@
 const { app, BrowserWindow } = require("electron");
-const url = require('url')
-const path = require('path')
+const url = require("url");
+const path = require("path");
+const { Notification } = require("electron/main");
 
 const createWindow = () => {
-    const mainWindow = new BrowserWindow({
-        title: 'Electron',
-        width: 1000,
-        height: 600,
-        
-    })
+  const mainWindow = new BrowserWindow({
+    title: "Electron",
+    width: 1000,
+    height: 600,
+  });
 
-    mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools();
+  if (process.platform === "win32") {
+    app.setAppUserModelId(app.name);
+  }
 
-    const startUrl = url.format({
-        pathname: path.join(__dirname, './app/dist/index.html'),
-        protocol: 'file',
-    })
+  const startUrl = url.format({
+    pathname: path.join(__dirname, "./app/dist/index.html"),
+    protocol: "file",
+  });
 
-    mainWindow.loadURL("http://localhost:5173") // change this to stratUrl when deploying
-}
+//   const notif = new Notification({
+//     icon: "assets/wolf.png",
+//     body: "notif for when it runs",
+//     title: "Title for when it runs",
+//   });
 
-app.whenReady().then(createWindow)
+//   notif.show()
+
+  mainWindow.loadURL("http://localhost:5173"); // change this to startUrl when deploying
+};
+
+app.whenReady().then(createWindow);
