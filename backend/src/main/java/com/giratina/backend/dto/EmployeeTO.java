@@ -6,9 +6,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.math.BigDecimal;
 
-@Document(value = "employee")
+@Document(value = "employees")
 @Data
 @Builder
 public class EmployeeTO {
@@ -17,5 +16,5 @@ public class EmployeeTO {
     @Field(name = "employee_name")
     private String employeeName;
     private String location;
-    private BigDecimal salary;
+    private Double salary;
 }
