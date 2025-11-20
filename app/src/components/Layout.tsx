@@ -1,4 +1,3 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 
 const Layout = () => {
@@ -10,7 +9,7 @@ const Layout = () => {
           <a href="/work">Work</a>
         </li>
         <li>
-          <a href="/">Home</a>
+          <a href="/home">Home</a>
         </li>
       </ul>
       <Outlet />{" "}

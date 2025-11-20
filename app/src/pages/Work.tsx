@@ -1,5 +1,3 @@
-import React from "react";
-
 const Work = () => {
   const showNOtification = () => {
     new Notification("heyo", {

@@ -2,6 +2,7 @@ const { app, BrowserWindow } = require("electron");
 const url = require("url");
 const path = require("path");
 const { Notification } = require("electron/main");
+const { start } = require("repl");
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
@@ -28,7 +29,7 @@ const createWindow = () => {
 
 //   notif.show()
 
-  mainWindow.loadURL("http://localhost:5173"); // change this to startUrl when deploying
+  mainWindow.loadURL("http://localhost:5173"); // does not work with npm run buidl anymore :(
 };
 
 app.whenReady().then(createWindow);
