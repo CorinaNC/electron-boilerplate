@@ -1,15 +1,16 @@
+import { Box, Button } from "@chakra-ui/react"
+
 const Work = () => {
-  const showNOtification = () => {
+  const showNotification = () => {
     new Notification("heyo", {
       body: "This is the notif here you gooooo",
       icon: "assets/wolf.png",
     });
   };
   return (
-    <div>
-      this is the work page
-      <button onClick={showNOtification}>NOtify</button>
-    </div>
+    <Box>
+      <Button onClick={showNotification}>Notify</Button>
+    </Box>
   );
 };
 

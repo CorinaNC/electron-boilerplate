@@ -1,20 +1,15 @@
 import { Outlet } from "react-router-dom";
-
+import { Box, HStack, Link, List, ListItem } from "@chakra-ui/react";
 const Layout = () => {
   return (
-    <div>
-      <p>This is our layout</p>
-      <ul>
-        <li>
-          <a href="/work">Work</a>
-        </li>
-        <li>
-          <a href="/home">Home</a>
-        </li>
-      </ul>
-      <Outlet />{" "}
+    <Box>
+      <HStack pt="0.5rem" pl="0.5rem">
+        <Link href="/work">Work</Link>
+        <Link href="/home">Home</Link>
+      </HStack>
       {/* <Outlet /> is needed to provide nested routes inside of x route */}
-    </div>
+      <Outlet />
+    </Box>
   );
 };
 

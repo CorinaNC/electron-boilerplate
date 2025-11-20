@@ -1,13 +1,14 @@
+import { Heading, Box } from "@chakra-ui/react";
 // @ts-ignore
-import WebCam from '../components/WebCam.jsx'
+import WebCam from "../components/WebCam.jsx";
 
 const Main = () => {
   return (
-    <div>
-        <h1>The Main Page</h1>
-        <WebCam />
-    </div>
-  )
-}
+    <Box>
+      <Heading>The Main Page</Heading>
+      <WebCam />
+    </Box>
+  );
+};
 
-export default Main
+export default Main;
