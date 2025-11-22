@@ -7,14 +7,14 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.time.LocalDateTime;
 
 @Data
 @Builder(setterPrefix = "set")
-@Document(collection = "users")
-public class User {
+@Document(collection = "postures")
+public class Posture {
     @Id
     private ObjectId id;
 
@@ -24,12 +24,8 @@ public class User {
     @LastModifiedDate
     private LocalDateTime updatedTS;
 
-    @Field("first_name")
-	private String firstName;
+    @DocumentReference(lazy = true)
+    private User user;
 
-    @Field("last_name")
-	private String lastName;
-
-    @Field("email")
-	private String email;
+    // TODO: Add vectors or something?? How do we define this posture
 }

@@ -32,15 +32,13 @@ public class UserRepositoryTest {
     @Test
     void testFindByEmail() {
         User user = User.builder()
-                .setName("test_user")
-                .setPassword("test_password")
+                .setFirstName("First")
                 .setEmail("test_email@test_domain.com")
                 .build();
 
         userRepository.save(user);
         Optional<User> userOptional = userRepository.findByEmail("test_email@test_domain.com");
         assertThat(userOptional).isPresent();
-        assertThat(userOptional.get().getName()).isEqualTo("test_user");
-        assertThat(userOptional.get().getPassword()).isEqualTo("test_password");
+        assertThat(userOptional.get().getFirstName()).isEqualTo("First");
     }
 }

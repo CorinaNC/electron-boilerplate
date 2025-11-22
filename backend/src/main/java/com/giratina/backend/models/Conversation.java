@@ -7,14 +7,15 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Builder(setterPrefix = "set")
-@Document(collection = "users")
-public class User {
+@Document(collection = "conversations")
+public class Conversation {
     @Id
     private ObjectId id;
 
@@ -24,12 +25,6 @@ public class User {
     @LastModifiedDate
     private LocalDateTime updatedTS;
 
-    @Field("first_name")
-	private String firstName;
-
-    @Field("last_name")
-	private String lastName;
-
-    @Field("email")
-	private String email;
+    @DocumentReference(lazy = true)
+    private List<Chat> chats;
 }
